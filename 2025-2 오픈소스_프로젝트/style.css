@@ -1,0 +1,289 @@
+/* 전체 기본 설정 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f5f5ff;
+
+  background: linear-gradient(135deg, #050510, #151535, #3b0f37);
+  background-attachment: fixed;
+}
+
+/* 메인 콘텐츠 영역 너비 제한 */
+main {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* 상단 타이틀 영역 */
+.site-header {
+  width: 100%;
+  text-align: center;
+  padding: 2.5rem 1.5rem 1rem;
+}
+
+.site-title {
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 8px rgba(119, 141, 255, 0.9),
+               0 0 18px rgba(255, 77, 196, 0.8);
+  animation: titleGlow 3.5s ease-in-out infinite alternate;
+}
+
+/* 히어로 섹션 */
+.hero {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* 노래 카드들을 감싸는 영역 */
+.songs {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  justify-content: center;
+}
+
+/* 개별 곡 카드 */
+.song-card {
+  background: rgba(10, 10, 25, 0.7);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 520px;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 0 22px rgba(116, 143, 255, 0.35),
+    0 0 60px rgba(255, 95, 162, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 카드 hover 시 전투력 상승 효과 */
+.song-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 28px rgba(143, 168, 255, 0.85),
+    0 0 80px rgba(255, 120, 196, 0.7);
+}
+
+/* 카드 상단: 썸네일 + 텍스트 */
+.song-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.song-thumbnail {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.song-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.song-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.song-artist {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* 카드 본문 */
+.song-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.song-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* YouTube iframe 영역 */
+.song-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 0.9rem;
+}
+
+/* 전투력 상승 버튼 */
+.power-button {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  padding: 0.6rem 1.4rem;
+
+  border: none;
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  background: linear-gradient(120deg, #ff4ec7, #ffb347, #7f7bff);
+  background-size: 200% 200%;
+  color: #050510;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 10px rgba(255, 111, 207, 0.7),
+    0 0 22px rgba(124, 124, 255, 0.7);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 0.7s ease;
+}
+
+.power-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  background-position: 100% 0;
+  box-shadow:
+    0 0 16px rgba(255, 138, 219, 0.95),
+    0 0 30px rgba(141, 141, 255, 0.9);
+}
+
+/* 노래 카드별 살짝 다른 테두리 색감 */
+.song-architect {
+  border: 1px solid rgba(135, 206, 250, 0.4);
+}
+
+.song-heychild {
+  border: 1px solid rgba(255, 99, 132, 0.5);
+}
+
+/* 내 정보 섹션 */
+.info {
+  margin-top: 3rem;
+  padding: 1.8rem 1.5rem;
+  border-radius: 1.2rem;
+
+  background: rgba(15, 15, 35, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow: 0 0 26px rgba(120, 144, 255, 0.45);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.info-list {
+  list-style: none;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.info-list a {
+  color: #ffd5ff;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 213, 255, 0.7);
+}
+
+.info-list a:hover {
+  text-decoration: underline;
+}
+
+/* 네온 텍스트 애니메이션 */
+@keyframes titleGlow {
+  0% {
+    text-shadow:
+      0 0 8px rgba(119, 141, 255, 0.9),
+      0 0 18px rgba(255, 77, 196, 0.6);
+  }
+  100% {
+    text-shadow:
+      0 0 14px rgba(177, 195, 255, 1),
+      0 0 28px rgba(255, 140, 220, 0.9);
+  }
+}
+
+/* 반응형: 화면이 좁을 때 */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero {
+    min-height: 22vh;
+  }
+
+  .song-header {
+    flex-direction: row;
+  }
+
+  .song-card {
+    padding: 1.3rem;
+  }
+
+  .song-thumbnail {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .site-title {
+    font-size: 1.7rem;
+  }
+
+  .song-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .song-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+
+  .power-button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
